@@ -51,7 +51,7 @@ jobs:
     needs: build-app
     runs-on: windows-latest
     steps:
-      - run: echo "Hello Windows"
+      - run: echo "Hello Windows Trying again"
   
   package:
     needs: [build-app, build-db]
