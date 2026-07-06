@@ -31,7 +31,7 @@ public class CreateBudgetPanel extends JPanel {
                 JOptionPane.showMessageDialog(this, "Enter month and limit");
                 return;
             }
-            String url = "http://localhost:8080/api/budget/" + month + "?limit=" + limit;
+            String url = "https://budgetservice1.azurewebsites.net/api/budget/" + month + "?limit=" + limit;
             String resp = HttpHelper.sendPost(url, "");
             output.setText(resp);
         });

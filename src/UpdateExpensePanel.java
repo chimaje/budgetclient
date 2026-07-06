@@ -59,7 +59,7 @@ public class UpdateExpensePanel extends JPanel {
                     "\"category\": \"" + escape(category) + "\"\n" +
                     "}";
 
-            String url = "http://localhost:8080/api/budget/" + month + "/expense/" + id;
+            String url = "https://budgetservice1.azurewebsites.net/api/budget/" + month + "/expense/" + id;
             String resp = HttpHelper.sendPut(url, json);
             output.setText(resp);
 

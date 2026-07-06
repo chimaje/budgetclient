@@ -65,9 +65,19 @@ public class AddExpensePanel extends JPanel {
                     "\"category\": \"" + escape(category) + "\"\n" +
                     "}";
 
-            String url = "http://localhost:8080/api/budget/" + month + "/expense";
+            String url = "https://budgetservice1.azurewebsites.net/api/budget/" + month + "/expense";
             String resp = HttpHelper.sendPost(url, json);
-            output.setText(resp);
+            output.setText("Expense Added Sucessfully");
+            Timer timer = new Timer(1500, e -> {
+                monthField.setText("");
+                idField.setText("");
+                nameField.setText("");
+                amountField.setText("");
+                categoryField.setText("");
+                output.setText("");
+            });
+            timer.setRepeats(false);
+            timer.start();
         } catch (Exception ex) {
             output.setText("Error: " + ex.getMessage());
         }

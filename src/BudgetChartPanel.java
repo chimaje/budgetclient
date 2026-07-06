@@ -37,7 +37,7 @@ public class BudgetChartPanel extends JPanel {
         String month = monthField.getText().trim();
         if (month.isEmpty()) { JOptionPane.showMessageDialog(this, "Enter month"); return; }
 
-        String url = "http://localhost:8080/api/budget/" + month + "/summary";
+        String url = "https://budgetservice1.azurewebsites.net/api/budget/" + month + "/summary";
         String resp = HttpHelper.sendGet(url);
 
         if (resp.startsWith("Error") || resp.startsWith("HTTP")) {

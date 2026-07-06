@@ -29,7 +29,7 @@ public class DeleteExpensePanel extends JPanel {
             String month = monthField.getText().trim();
             String id = idField.getText().trim();
             if (month.isEmpty() || id.isEmpty()) { JOptionPane.showMessageDialog(this, "Enter month and id"); return; }
-            String url = "http://localhost:8080/api/budget/" + month + "/expense/" + id;
+            String url = "https://budgetservice1.azurewebsites.net/api/budget/" + month + "/expense/" + id;
             String resp = HttpHelper.sendDelete(url);
             output.setText(resp);
         });
