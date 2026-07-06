@@ -19,12 +19,12 @@ jobs:
       id: var_source_step
       run: |
         echo "Performing a random task"
-        echo "name=var1_name::TechSckool" >> $GITHUB_OUTPUT
-        echo "name=var2_date::$(date +'%Y-%m-%d-%H-%M')" >> $GITHUB_OUTPUT
+        echo "var1_name=TechSckool" >> $GITHUB_OUTPUT
+        echo "var2_date=$(date +'%Y-%m-%d-%H-%M')" >> $GITHUB_OUTPUT
     - id: step1
-      run: echo "name=test::ImportantValue1" >> $GITHUB_OUTPUT
+      run: echo "test=ImportantValue1" >> $GITHUB_OUTPUT
     - id: step2
-      run: echo "name=test::ImportantValue2" >> $GITHUB_OUTPUT
+      run: echo "test=ImportantValue2" >> $GITHUB_OUTPUT
 
 
     - name: Get-Variable-Value
